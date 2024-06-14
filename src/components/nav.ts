@@ -6,6 +6,7 @@ export const nav_menu_links: { label: string; href: string }[] = [
     { label: "Home", href: "/" },
     { label: "Projects", href: "/projects/" },
     { label: "About", href: "/about/" },
+    { label: "Resume", href: "/resume" },
 ];
 
 export const nav_social_links: {
@@ -22,7 +23,6 @@ export const nav_social_links: {
     { label: "Email", href: `mailto:${links.email}`, icon: "gmail" },
     { label: "Twitter", href: links.twitter, icon: "twitter-logo" },
     { label: "LinkedIn", href: links.linkedin, icon: "linkedin-logo" },
-    // {label: "Resume", href: links.resume, icon: "resume"},
 ];
 
 export const resume_link: {
@@ -31,7 +31,7 @@ export const resume_link: {
     icon: "resume"
 } = {
     label: "Resume",
-    href: links.resume,
+    href: "/resume",
     icon: "resume",
 };
 
