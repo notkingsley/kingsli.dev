@@ -4,11 +4,12 @@ import "../styles/call_to_action.css";
 interface Props {
     href: string;
     target?: string;
+    styles?: string;
 }
 
-const { href, target = "_self" } = Astro.props;
+const { href, target = "_self", styles = "" } = Astro.props;
 ---
 
-<a href={href} target={target} class="call-to-action">
+<a href={href} target={target} class="call-to-action" style={styles}>
     <slot />
 </a>
