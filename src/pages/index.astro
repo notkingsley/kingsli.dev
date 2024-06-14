@@ -16,8 +16,6 @@ import PortfolioPreview from "../components/PortfolioPreview.astro";
 import ContactMe from "../components/ContactMe.astro";
 import Skills from "../components/Skills.astro";
 
-
-// Content Fetching: List four most recent work projects
 const projects = (await getCollection("work"))
     .sort(
         (a: any, b: any) =>
@@ -25,13 +23,9 @@ const projects = (await getCollection("work"))
     )
     .slice(0, 4);
 
-const mentions = [
-    "Nobel Prize",
-    "Google",
-    "OpenAI",
-    "The bloody Queen of England",
-    "TechCrunch",
-]; // TODO: Replace with actual mentions
+const HERO_TAGLINE =
+    "I am a Software Developer with strong foundations in\
+ Computer Science principles and a proven track record of delivering high-quality software.";
 ---
 
 <BaseLayout>
@@ -40,19 +34,18 @@ const mentions = [
             <header class="hero">
                 <Hero
                     title="Hello, my name is Kingsley Oyelabi"
-                    tagline="I am a Software Developer who is currently based in the Atlantic Ocean."
+                    tagline={HERO_TAGLINE}
                     align="start"
-                    aria-todo="Update hero with more information"
                 >
-                    <div class="roles" aria-todo="Update pills">
+                    <div class="roles">
                         <Pill>
                             <Icon icon="code" size="1.33em" /> Developer
                         </Pill>
                         <Pill>
-                            <Icon icon="microphone-stage" size="1.33em" /> Mistborn
+                            <Icon icon="thinking" size="1.33em" /> Critical Thinker
                         </Pill>
                         <Pill>
-                            <Icon icon="pencil-line" size="1.33em" /> Scholar
+                            <Icon icon="machine-learning" size="1.33em" /> AI Engineer
                         </Pill>
                     </div>
                 </Hero>
@@ -73,14 +66,11 @@ const mentions = [
         <main class="wrapper stack gap-20 lg:gap-48">
             <section
                 class="section with-background with-cta"
-                aria-todo="Update selected works"
+                aria-todo="Update projects"
             >
                 <header class="section-header stack gap-2 lg:gap-4">
-                    <h3>Selected Work</h3>
-                    <p>
-                        Take a look below at some of my featured work for
-                        clients from the past few years.
-                    </p>
+                    <h3>Projects at a glance</h3>
+                    <p>Here are some of my recent projects.</p>
                 </header>
 
                 <div class="gallery">
@@ -100,32 +90,6 @@ const mentions = [
                         View All
                         <Icon icon="arrow-right" size="1.2em" />
                     </CallToAction>
-                </div>
-            </section>
-
-            <section
-                class="section with-background bg-variant"
-                aria-todo="Revise mentions"
-            >
-                <header class="section-header stack gap-2 lg:gap-4">
-                    <h3>Mentions</h3>
-                    <p>
-                        I have not been fortunate enough to receive praise for
-                        my work in any publication. None of these, for example,
-                        have ever mentioned me.
-                    </p>
-                </header>
-
-                <div class="gallery">
-                    <Grid variant="small">
-                        {
-                            mentions.map((brand) => (
-                                <li class="mention-card">
-                                    <p>{brand}</p>
-                                </li>
-                            ))
-                        }
-                    </Grid>
                 </div>
             </section>
         </main>
