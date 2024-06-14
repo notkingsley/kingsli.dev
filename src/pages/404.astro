@@ -1,16 +1,15 @@
 ---
 import Hero from "../components/Hero.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Pill from "../components/Pill.astro";
+import CallToAction from "../components/CallToAction.astro";
 ---
 
 <BaseLayout title="Not Found" description="404 Error — this page was not found">
     <Hero title="Page Not Found" tagline="You're lost, my fren." />
     <br />
-    <br />
     <div style="width: fit-content; align-self: center;">
-        <Pill>
-            <a style="text-decoration: none;" href="/"> Restart from here </a>
-        </Pill>
+        <CallToAction href="/">
+            Restart from here
+        </CallToAction>
     </div>
 </BaseLayout>
