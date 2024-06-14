@@ -1,0 +1,22 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+import "../styles/portfolio_preview.css";
+
+interface Props {
+    project: CollectionEntry<"work">;
+}
+
+const { data, slug } = Astro.props.project;
+---
+
+<a class="card portfolio" href={`/project/${slug}`}>
+    <span class="title portfolio">{data.title}</span>
+    <img
+        src={data.img}
+        alt={data.img_alt || ""}
+        loading="lazy"
+        decoding="async"
+        class="portfolio"
+    />
+</a>

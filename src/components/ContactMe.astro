@@ -1,0 +1,25 @@
+---
+import CallToAction from "./CallToAction.astro";
+import Icon from "./Icon.astro";
+import { MAIL, SUBJECT, BODY } from "./Email";
+
+import "../styles/contact.css";
+
+const DEFAULT_MAIL = `mailto:${MAIL}`;
+const GMAIL_LINK = `https://mail.google.com/mail/?view=cm&to=${MAIL}&su=${SUBJECT}&body=${BODY}`;
+---
+
+<aside class="contact">
+    <h2 class="contact">Want to work with me?</h2>
+    <div>
+        <CallToAction href={DEFAULT_MAIL} target="_blank">
+            Send me a Message
+            <Icon icon="paper-plane-tilt" size="1.2em" />
+        </CallToAction>
+        <br />
+        <CallToAction href={GMAIL_LINK} target="_blank">
+            Send me a Message Now
+            <Icon icon="gmail-coloured" size="1.2em" />
+        </CallToAction>
+    </div>
+</aside>
