@@ -1,0 +1,12 @@
+---
+import GenericLink from "./GenericLink.astro";
+
+interface Props {
+    href: string;
+}
+
+const { href } = Astro.props;
+---
+
+<div style="color: var(--accent-text-over); opacity: 0.2;">|</div>
+<GenericLink href={href} target="_blank" external={true}> Source </GenericLink>
