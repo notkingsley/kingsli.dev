@@ -1,0 +1,18 @@
+---
+import "../styles/generic_link.css";
+
+import Icon from "./Icon.astro";
+
+interface Props {
+    href: string;
+    target?: string;
+    external?: boolean;
+}
+
+const { href, target = "_self", external = false } = Astro.props;
+---
+
+<a href={href} target={target} class="generic-link">
+    <slot />
+    {external && <Icon icon="external-link" />}
+</a>
