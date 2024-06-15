@@ -7,12 +7,13 @@ interface Props {
     href: string;
     target?: string;
     external?: boolean;
+    style?: string;
 }
 
-const { href, target = "_self", external = false } = Astro.props;
+const { href, target = "_self", external = false, style = "" } = Astro.props;
 ---
 
-<a href={href} target={target} class="generic-link">
+<a href={href} target={target} class="generic-link" style={style}>
     <slot />
     {external && <Icon icon="external-link" />}
 </a>
