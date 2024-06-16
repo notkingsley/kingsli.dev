@@ -1,9 +1,10 @@
 ---
 interface Props {
     text: string;
+    below?: boolean;
 }
 
-const { text } = Astro.props;
+const { text, below = false } = Astro.props;
 
 export const icon_to_hover_text = {
     distributed: "Distributed Systems",
@@ -21,7 +22,8 @@ export const icon_to_hover_text = {
     <i class="icon">
         <slot />
     </i>
-    <span class="tooltip">{text}</span>
+    {!below && <span class="tooltip above">{text}</span>}
+    {below && <span class="tooltip below">{text}</span>}
 </div>
 
 <style>
@@ -40,12 +42,19 @@ export const icon_to_hover_text = {
         padding: 5px;
         position: absolute;
         z-index: 1;
-        bottom: 125%;
         left: 50%;
         margin-left: -60px;
         opacity: 0;
         transition: opacity 0.3s;
         font-size: var(--text-sm);
+    }
+
+    .tooltip.above {
+        bottom: 125%;
+    }
+
+    .tooltip.below {
+        top: 125%;
     }
 
     .tooltip::after {
@@ -56,7 +65,15 @@ export const icon_to_hover_text = {
         margin-left: -5px;
         border-width: 5px;
         border-style: solid;
+    }
+    
+    .tooltip.above::after {
         border-color: black transparent transparent transparent;
+    }
+    
+    .tooltip.below::after {
+        bottom: 50%;
+        border-color: rgba(0, 0, 0, 0.5) transparent transparent transparent;
     }
 
     .icon-container:hover .tooltip {
