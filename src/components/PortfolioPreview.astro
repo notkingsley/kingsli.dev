@@ -1,4 +1,6 @@
 ---
+import HoverText from "./HoverText.astro";
+import Icon from "./Icon.astro";
 import ProjectTag from "./ProjectTag.astro";
 import { type ProjectEntry } from "./project_entry";
 
@@ -13,6 +15,11 @@ const { data, id } = Astro.props.project;
 
 <a class="card portfolio" href={`/project/${id}`}>
     <span class="title portfolio">{data.title}</span>
+    <div class="description portfolio">
+        <HoverText text={data.description} below>
+            <Icon icon="info" size="1.2em" gradient />
+        </HoverText>
+    </div>
     <div class="tags portfolio">
         {data.tags.map((t) => <ProjectTag tag={t} />)}
     </div>
