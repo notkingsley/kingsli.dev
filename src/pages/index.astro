@@ -1,10 +1,6 @@
 ---
-import { getCollection } from "astro:content";
-
-// Layout import
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-// Component Imports
 import CallToAction from "../components/CallToAction.astro";
 import Grid from "../components/Grid.astro";
 import Hero from "../components/Hero.astro";
@@ -12,16 +8,10 @@ import Icon from "../components/Icon.astro";
 import Pill from "../components/Pill.astro";
 import PortfolioPreview from "../components/PortfolioPreview.astro";
 
-// Page section components
 import ContactMe from "../components/ContactMe.astro";
 import Skills from "../components/Skills.astro";
 
-const projects = (await getCollection("work"))
-    .sort(
-        (a: any, b: any) =>
-            b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
-    )
-    .slice(0, 4);
+import { projects } from "../components/projects";
 
 const HERO_TAGLINE =
     "I am a Software Developer with strong foundations in\
@@ -76,7 +66,7 @@ const HERO_TAGLINE =
                 <div class="gallery">
                     <Grid variant="offset">
                         {
-                            projects.map((project: any) => (
+                            projects.slice(0, 4).map((project: any) => (
                                 <li>
                                     <PortfolioPreview project={project} />
                                 </li>
