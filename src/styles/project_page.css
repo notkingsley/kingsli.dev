@@ -43,8 +43,8 @@ header {
     margin: 1.5rem 0;
 }
 
-.content :global(img) {
-    border-radius: 1.5rem;
+img.project-image {
+    border-radius: 5rem;
     box-shadow: var(--shadow-sm);
     background: var(--gradient-subtle);
     border: 1px solid var(--gray-800);

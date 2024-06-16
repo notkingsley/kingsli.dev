@@ -34,6 +34,14 @@ const { entry } = Astro.props;
                     <a class="back-link" href="/projects/"
                         ><Icon icon="arrow-left" /> All Projects</a
                     >
+                    {
+                        entry.data.img && (
+                            <img class="project-image"
+                                src={entry.data.img}
+                                alt={entry.data.img_alt || ""}
+                            />
+                        )
+                    }
                     <Hero title={entry.data.title} align="start">
                         <div class="details">
                             <div class="tags">
@@ -67,14 +75,6 @@ const { entry } = Astro.props;
             </header>
             <main class="wrapper">
                 <div class="stack gap-10 content">
-                    {
-                        entry.data.img && (
-                            <img
-                                src={entry.data.img}
-                                alt={entry.data.img_alt || ""}
-                            />
-                        )
-                    }
                     <div class="content">
                         <p>{entry.data.content}</p>
                     </div>
