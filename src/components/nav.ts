@@ -25,16 +25,6 @@ export const nav_social_links: {
     { label: "LinkedIn", href: links.linkedin, icon: "linkedin-logo" },
 ];
 
-export const resume_link: {
-    label: string;
-    href: string;
-    icon: "resume"
-} = {
-    label: "Resume",
-    href: "/resume",
-    icon: "resume",
-};
-
 export function is_nav_link_active(current_url: string, href: string) {
     return (
         current_url === href ||
