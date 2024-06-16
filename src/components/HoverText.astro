@@ -22,16 +22,16 @@ const { text } = Astro.props;
     .tooltip {
         visibility: hidden;
         width: 120px;
-        background-color: black;
-        color: #fff;
+        color: var(--accent-text-over);
+        background-color: rgba(0, 0, 0, 0.5);
         text-align: center;
         border-radius: 5px;
         padding: 5px;
         position: absolute;
         z-index: 1;
-        bottom: 125%; /* Position above the icon */
+        bottom: 125%;
         left: 50%;
-        margin-left: -60px; /* Center the tooltip */
+        margin-left: -60px;
         opacity: 0;
         transition: opacity 0.3s;
         font-size: var(--text-sm);
@@ -40,7 +40,7 @@ const { text } = Astro.props;
     .tooltip::after {
         content: "";
         position: absolute;
-        top: 100%; /* At the bottom of the tooltip */
+        top: 100%;
         left: 50%;
         margin-left: -5px;
         border-width: 5px;
