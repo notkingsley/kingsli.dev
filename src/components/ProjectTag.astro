@@ -1,0 +1,25 @@
+---
+import HoverText from "./HoverText.astro";
+import Icon from "./Icon.astro";
+import { icon_to_hover_text } from "./HoverText.astro";
+import { icon_paths } from "./icon_paths";
+
+interface Props {
+    tag: keyof typeof icon_paths;
+}
+
+const { tag } = Astro.props;
+
+const GRADIENT_TAGS = ["open-source", "distributed", "rocket-launch"];
+
+const use_gradient = GRADIENT_TAGS.includes(tag);
+---
+
+{
+    (
+        // @ts-ignore
+        <HoverText text={icon_to_hover_text[tag]}>
+            <Icon icon={tag} size="1.2em" gradient={use_gradient} />
+        </HoverText>
+    )
+}
