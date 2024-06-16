@@ -4,19 +4,20 @@ import HoverText from "./HoverText.astro";
 
 interface Props {
     href: string;
+    kind?: "Source" | "Site";
 }
 
-const { href } = Astro.props;
+const { href, kind = "Source" } = Astro.props;
 ---
 
 <div style="color: var(--accent-text-over); opacity: 0.2;">|</div>
-<HoverText text="Go to Source">
+<HoverText text=`Go to ${kind}`>
     <GenericLink
         href={href}
         target="_blank"
         external={true}
         style="font-size: var(--text-md);"
     >
-        Source
+        {kind}
     </GenericLink>
 </HoverText>
