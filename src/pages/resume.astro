@@ -21,6 +21,12 @@ import { links } from "../components/links";
         <object data={links.resume_file} type="application/pdf">
             <div>
                 Your browser couldn't load the PDF.
+                <div style="display: none;" id="redirect-text">
+                    Redirecting you to the file...
+                    <br />
+                    <br />
+                    <br />
+                </div>
                 <a class="download-resume" download href={links.resume_file}>
                     Download
                 </a>
@@ -91,6 +97,8 @@ import { links } from "../components/links";
 </style>
 
 <script>
+    import { links } from "../components/links";
+
     function show_pdf_header() {
         let pdf_header = document.getElementById("pdf-header");
         if (pdf_header) {
@@ -98,15 +106,36 @@ import { links } from "../components/links";
         }
     }
 
-    function hide_pdf_header() {
-        let pdf_header = document.getElementById("pdf-header");
-        if (pdf_header) {
-            pdf_header.style.display = "none";
-        }
+    let obj = document.querySelector("object");
+    if (!obj) {
+        console.error("Couldn't find the object element.");
+        throw new Error("Couldn't find the object element.");
     }
 
-    document.querySelector("object")?.addEventListener("load", show_pdf_header);
-    document
-        .querySelector("object")
-        ?.addEventListener("error", hide_pdf_header);
+    obj.addEventListener("load", show_pdf_header);
+
+    let loadTimeout: number;
+
+    function handleLoad() {
+        clearTimeout(loadTimeout);
+        console.log("Object loaded successfully.");
+    }
+
+    function handleError() {
+        clearTimeout(loadTimeout);
+        console.error("Failed to load the object.");
+        let redirectText = document.querySelector("#redirect-text");
+        if (redirectText) {
+            // @ts-ignore
+            redirectText.style.display = "block";
+        }
+
+        setTimeout(function () {
+            window.location.href = links.resume_file;
+        }, 3000);
+    }
+
+    obj?.addEventListener("load", handleLoad);
+
+    loadTimeout = setTimeout(handleError, 2000);
 </script>
