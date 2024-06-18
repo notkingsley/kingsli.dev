@@ -1,0 +1,74 @@
+---
+import HoverText from "./HoverText.astro";
+import Icon from "./Icon.astro";
+import ProjectTag from "./ProjectTag.astro";
+import { type ProjectEntry } from "./project_entry";
+
+import "../styles/portfolio_preview.css";
+
+interface Props {
+    project: { data: ProjectEntry; id: string };
+}
+
+const { data, id } = Astro.props.project;
+const link = data.source || data.site || `#${id}`;
+---
+
+<a class="card portfolio" href={link} target="_blank">
+    <span class="title portfolio">{data.title}</span>
+    <div class="description portfolio">
+        <HoverText text={data.description} below>
+            <Icon icon="info" size="1.2em" gradient />
+        </HoverText>
+    </div>
+    <div class="portfolio-content">
+        {data.content}
+    </div>
+    <div class="tags portfolio">
+        {data.tags.map((t) => <ProjectTag tag={t} />)}
+    </div>
+    <img
+        src="/assets/old-profile.svg"
+        loading="lazy"
+        decoding="async"
+        class="portfolio"
+    />
+</a>
+
+<style>
+    .portfolio-content {
+        grid-area: -1 / 1 / 2 / 2;
+        z-index: 1;
+        margin: 0.5rem;
+        padding: 0.5rem 1rem;
+        background-color: rgba(0, 0, 0, 0.3);
+        color: var(--gray-200);
+        border-radius: 0.375rem;
+        width: auto;
+        height: auto;
+        align-self: start;
+        font-size: var(--text-sm);
+        justify-self: start;
+    }
+
+    .description.portfolio,
+    .tags.portfolio {
+        display: none;
+    }
+
+    img.portfolio {
+        object-fit: fill;
+    }
+
+    @media (min-width: 50em) {
+        .portfolio-content {
+            font-size: var(--text-lg);
+            border-radius: 0.9375rem;
+        }
+
+        .description.portfolio,
+        .tags.portfolio {
+            display: block;
+        }
+    }
+</style>
