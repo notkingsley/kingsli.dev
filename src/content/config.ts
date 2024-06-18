@@ -27,4 +27,16 @@ export const collections = {
             order: z.number(),
         }),
     }),
+    old_work: defineCollection({
+        type: "data",
+        schema: z.object({
+            position: z.string(),
+            type: z.string(),
+            company: z.string(),
+            link: z.string(),
+            date: z.string(),
+            activities: z.array(z.string()),
+            order: z.number(),
+        }),
+    }),
 };
