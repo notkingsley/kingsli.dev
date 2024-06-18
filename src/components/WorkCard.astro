@@ -1,0 +1,36 @@
+---
+import { type WorkEntry } from "./work_entry";
+
+import "../styles/work_card.css";
+
+interface Props {
+    work: WorkEntry;
+    animate?: boolean;
+    color?: boolean;
+}
+
+const { work, animate = false, color = true } = Astro.props;
+const classes = [
+    "work-section",
+    animate ? "alive" : "",
+    color ? "colored" : "",
+].join(" ");
+---
+
+<div class={classes}>
+    <div class="work-section-inner">
+        <div class="work-header">
+            <h2>{work.company} - {work.position}</h2>
+        </div>
+        <div class="work-subheader">
+            <span>{work.type}</span>
+            <span class="work-date">{work.date}</span>
+        </div>
+        <div class="divider"></div>
+        <div class="work-content">
+            <ul>
+                {work.activities.map((activity) => <li>{activity}</li>)}
+            </ul>
+        </div>
+    </div>
+</div>

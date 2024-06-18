@@ -1,0 +1,117 @@
+.work-section {
+    padding: 5px;
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.work-section.colored {
+    background: linear-gradient(225deg, blue, red);
+}
+
+.work-section.alive {
+    background-size: 200% 200%;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+.work-section-inner {
+    background-color: var(--gray-900);
+    padding: 20px;
+    border-radius: 20px;
+    width: 100%;
+}
+
+.work-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 10px;
+}
+
+.work-header h2 {
+    margin: 0;
+    font-size: var(--text-md);
+}
+
+.work-subheader {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.work-subheader span {
+    font-size: var(--text-base);
+}
+
+.divider {
+    border-bottom: 1px solid #ccc;
+    margin: 10px 0;
+}
+
+.work-section.colored .divider {
+    position: relative;
+    margin: 10px 0;
+    height: 1px;
+}
+
+.work-section.colored .divider::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, blue, red);
+}
+
+.work-section.alive .divider::before {
+    background-size: 200% 200%;
+    animation: gradientAnimation 3s ease infinite;
+}
+
+.work-content {
+    margin-top: 10px;
+}
+
+.work-content ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.work-content li {
+    font-size: var(--text-sm);
+    margin-bottom: 10px;
+}
+
+.work-date {
+    font-style: italic;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@media (min-width: 50em) {
+    .work-section {
+        border-radius: 45px;
+    }
+    .work-section-inner {
+        border-radius: 40px;
+    }
+    .work-header h2 {
+        font-size: var(--text-3xl);
+    }
+    .work-subheader span {
+        font-size: var(--text-lg);
+    }
+    .work-content li {
+        font-size: var(--text-md);
+    }
+}
