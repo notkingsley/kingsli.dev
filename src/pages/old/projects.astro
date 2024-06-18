@@ -1,0 +1,45 @@
+---
+import { getCollection } from "astro:content";
+
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+import Grid from "../../components/Grid.astro";
+import Hero from "../../components/Hero.astro";
+import Icon from "../../components/Icon.astro";
+import OldProject from "../../components/OldProject.astro";
+
+import { type ProjectEntry } from "../../components/project_entry";
+
+import "../../styles/old.css";
+
+const old_projects: { data: ProjectEntry; id: string }[] = (
+    await getCollection("old-projects")
+).sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout
+    title="Kingsley | Old Projects"
+    description="Some of my older projects..."
+>
+    <div class="stack gap-20">
+        <main class="wrapper stack gap-8">
+            <a class="back-link" href="/projects/"
+                ><Icon icon="arrow-left" /> Recent Projects
+            </a>
+            <Hero
+                title="Ancient Projects"
+                tagline="Some of my older projects..."
+                align="start"
+            />
+            <Grid variant="offset">
+                {
+                    old_projects.map((project) => (
+                        <li>
+                            <OldProject project={project} />
+                        </li>
+                    ))
+                }
+            </Grid>
+        </main>
+    </div>
+</BaseLayout>
