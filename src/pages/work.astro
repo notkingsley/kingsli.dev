@@ -22,6 +22,9 @@ const all_work: { data: WorkEntry; id: string }[] = (
                 align="start"
             />
             {all_work.map((w) => <WorkCard work={w.data} animate />)}
+            <div>
+                <a href="/old/work"> See my older work experiences </a>
+            </div>
         </main>
         <ContactMe />
     </div>
