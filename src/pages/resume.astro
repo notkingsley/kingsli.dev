@@ -114,7 +114,7 @@ import { links } from "../components/links";
 
     obj.addEventListener("load", show_pdf_header);
 
-    let loadTimeout: number;
+    let loadTimeout: ReturnType<typeof setTimeout>;
 
     function handleLoad() {
         clearTimeout(loadTimeout);
