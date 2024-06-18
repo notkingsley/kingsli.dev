@@ -1,0 +1,37 @@
+---
+import { getCollection } from "astro:content";
+
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+import Hero from "../../components/Hero.astro";
+import Icon from "../../components/Icon.astro";
+import WorkCard from "../../components/WorkCard.astro";
+import { type WorkEntry } from "../../components/work_entry";
+
+import "../../styles/old.css";
+
+const old_work: { data: WorkEntry; id: string }[] = (
+    await getCollection("old-work")
+).sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout
+    title="Kingsley | Old Work"
+    description="Kingsley's employment history"
+>
+    <div class="stack gap-20">
+        <main class="wrapper stack gap-15">
+            <a class="back-link" href="/work/"
+                ><Icon icon="arrow-left" /> Recent Work
+            </a>
+
+            <Hero
+                title="Old Work"
+                tagline="Some of the things I've done in the past.."
+                align="start"
+            />
+
+            {old_work.map((w) => <WorkCard work={w.data} color={false} />)}
+        </main>
+    </div>
+</BaseLayout>
