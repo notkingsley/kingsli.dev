@@ -4,5 +4,5 @@ export const links = {
     linkedin: "https://www.linkedin.com/in/notkingsley",
     stack_overflow: "https://stackoverflow.com/users/19434985/kingsley-oyelabi",
     email: "kingsley.not@gmail.com",
-    resume_file: "assets/files/kingsley_01_24.pdf",
+    resume_file: "/assets/files/kingsley_24_06.pdf",
 };
