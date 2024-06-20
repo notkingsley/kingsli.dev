@@ -1,125 +1,110 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from "astro:content";
 
-import ContactMe from '../components/ContactMe.astro';
-import Hero from '../components/Hero.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import ContactMe from "../components/ContactMe.astro";
+import Hero from "../components/Hero.astro";
+
+const about = await Promise.all(
+    (await getCollection("about")).map(async (entry) => {
+        return { Content: (await entry.render()).Content, slug: entry.slug };
+    })
+);
 ---
 
 <BaseLayout title="Kingsley | About" description="About Kingsley">
-	<div class="stack gap-20">
-		<main class="wrapper about">
-			<Hero
-				title="About"
-				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
-			>
-				<img
-					width="1553"
-					height="873"
-					src="/assets/at-work.jpg"
-					alt="Me at work"
-					aria-todo="Update image"
-				/>
-			</Hero>
+    <div class="stack gap-20">
+        <main class="wrapper about">
+            <Hero
+                title="About"
+                tagline="Thanks for stopping by. Read below to learn a bit about me."
+            >
+                <img
+                    width="1553"
+                    height="873"
+                    src="/assets/about.jpg"
+                    alt="About picture"
+                />
+            </Hero>
+            {
+                about.map((Component) => (
+                    <section>
+                        <h2 class="section-title">{Component.slug}</h2>
+                        <div class="content">
+                            <Component.Content />
+                        </div>
+                    </section>
+                ))
+            }
+        </main>
 
-			<section aria-todo="Update About">
-				<h2 class="section-title">Background</h2>
-				<div class="content">
-					<p>
-						Hi, my name is Kingsley Oyelabi working out of the deep Atlantic Ocean.
-						<a href="https://www.google.com/search?q=atlantic+ocean&udm=2">Here</a> are pictures 
-						in case you've not seen an ocean before.
-						I am a software engineer with a passion for building scalable and reliable software
-						systems. These days, I find I enjoy distributed systems and so I've been reading a lot
-						of topics in the literature.
-					</p>
-					<br />
-					<p>
-						But my varied interests do you little good. What you probably want to know is that I
-						am a software engineer with over 2 years of industry experience. And an insanely good
-						one at that. I have worked with a variety of technologies and languages, from
-						JavaScript to Python, and from React to Django. I have also worked with a variety of
-						tools and platforms, from AWS to Heroku, and from Docker to Kubernetes.
-						I'm awesome, and that's just a fact.
-					</p>
-					<br />
-					<p>
-						What else? Tons of stuff. No, I'm not going to tell you. You can text me if you want to
-						know.
-					</p>
-				</div>
-			</section>
-			<section>
-				<h2 class="section-title">Education</h2>
-				<div class="content">
-					<p> Computer Engineering @ Obafemi Awolowo University.</p>
-				</div>
-			</section>
-			<section>
-				<h2 class="section-title">Skills</h2>
-				<div class="content">
-					<p>Programming and Surgebinding</p>
-				</div>
-			</section>
-		</main>
-
-		<ContactMe />
-	</div>
+        <ContactMe />
+    </div>
 </BaseLayout>
 
 <style>
-	.about {
-		display: flex;
-		flex-direction: column;
-		gap: 3.5rem;
-	}
+    .about {
+        display: flex;
+        flex-direction: column;
+        gap: 3.5rem;
+    }
 
-	img {
-		margin-top: 1.5rem;
-		border-radius: 1.5rem;
-		box-shadow: var(--shadow-md);
-	}
+    img {
+        margin-top: 1.5rem;
+        border-radius: 7.5rem;
+        box-shadow: var(--shadow-md);
+    }
 
-	section {
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
-		color: var(--gray-200);
-	}
+    section {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        color: var(--gray-200);
+    }
 
-	.section-title {
-		grid-column-start: 1;
-		font-size: var(--text-xl);
-		color: var(--gray-0);
-	}
+    .section-title {
+        grid-column-start: 1;
+        font-size: var(--text-xl);
+        color: var(--gray-0);
+    }
 
-	.content {
-		grid-column: 2 / 4;
-	}
+    .section-title::first-letter {
+        text-transform: capitalize;
+    }
 
-	.content :global(a) {
-		text-decoration: 1px solid underline transparent;
-		text-underline-offset: 0.25em;
-		transition: text-decoration-color var(--theme-transition);
-	}
+    .content {
+        grid-column: 2 / 4;
+    }
 
-	.content :global(a:hover),
-	.content :global(a:focus) {
-		text-decoration-color: currentColor;
-	}
+    .content :global(p) {
+        margin-bottom: 2rem;
+    }
 
-	@media (min-width: 50em) {
-		.about {
-			display: grid;
-			grid-template-columns: 1fr 60% 1fr;
-		}
+    .content :global(a) {
+        text-decoration: 1px solid underline transparent;
+        text-underline-offset: 0.25em;
+        transition: text-decoration-color var(--theme-transition);
+    }
 
-		.about > :global(:first-child) {
-			grid-column-start: 2;
-		}
+    .content :global(a:hover),
+    .content :global(a:focus) {
+        text-decoration-color: currentColor;
+    }
 
-		section {
-			display: contents;
-			font-size: var(--text-lg);
-		}
-	}
+    @media (min-width: 50em) {
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 60% 1fr;
+        }
+
+        .about > :global(:first-child) {
+            grid-column-start: 2;
+        }
+
+        section {
+            display: contents;
+            font-size: var(--text-lg);
+        }
+    }
 </style>
