@@ -27,6 +27,10 @@
     margin-bottom: 10px;
 }
 
+.work-link {
+    text-decoration: none;
+}
+
 .work-header h2 {
     margin: 0;
     font-size: var(--text-md);

@@ -20,7 +20,9 @@ const classes = [
 <div class={classes}>
     <div class="work-section-inner">
         <div class="work-header">
-            <h2>{work.company} - {work.position}</h2>
+            <a href={work.link} target="_blank" class="work-link">
+                <h2>{work.company} - {work.position}</h2>
+            </a>
         </div>
         <div class="work-subheader">
             <span>{work.type}</span>
