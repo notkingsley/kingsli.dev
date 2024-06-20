@@ -1,6 +1,9 @@
 import { getCollection } from "astro:content";
 
-export const projects = (
+import { type ProjectEntry } from "./project_entry";
+
+// @ts-ignore
+export const projects: { data: ProjectEntry; id: string }[] = (
     await getCollection("projects")
 ).sort((a, b) => a.data.order - b.data.order);
 
