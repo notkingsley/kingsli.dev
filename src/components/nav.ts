@@ -22,7 +22,7 @@ export const nav_social_links: {
         href: links.stack_overflow,
         icon: "stack-overflow",
     },
-    { label: "Email", href: `mailto:${links.email}`, icon: "gmail" },
+    { label: "Email", href: links.email, icon: "gmail" },
     { label: "Twitter", href: links.twitter, icon: "twitter-logo" },
     { label: "LinkedIn", href: links.linkedin, icon: "linkedin-logo" },
 ];
