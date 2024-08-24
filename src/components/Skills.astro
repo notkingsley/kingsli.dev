@@ -1,47 +1,24 @@
 ---
 import Icon from "./Icon.astro";
+
+import { skills } from "./config";
 ---
 
 <section class="box skills">
-    <div class="stack gap-2 lg:gap-4">
-        <Icon
-            icon="stack-plus"
-            color="var(--accent-regular)"
-            size="2.5rem"
-            gradient
-        />
-        <h2>Full Stack</h2>
-        <p>
-            I have experience with backend development, databases, software
-            architecture, and frontend technologies.
-        </p>
-    </div>
-    <div class="stack gap-2 lg:gap-4">
-        <Icon
-            icon="strategy"
-            color="var(--accent-regular)"
-            size="2.5rem"
-            gradient
-        />
-        <h2>Strategy-Minded</h2>
-        <p>
-            I am a goal-oriented developer and stategic thinker who takes
-            pragmatic approaches to problem solving.
-        </p>
-    </div>
-    <div class="stack gap-2 lg:gap-4">
-        <Icon
-            icon="trophy"
-            color="var(--accent-regular)"
-            size="2.5rem"
-            gradient
-        />
-        <h2>Battle Tested</h2>
-        <p>
-            In my years in the industry, I've worked on several projects of
-            varying sizes and complexities.
-        </p>
-    </div>
+    {
+        skills.map((skill) => (
+            <div class="stack gap-2 lg:gap-4">
+                <Icon
+                    icon={skill.icon}
+                    color="var(--accent-regular)"
+                    size="2.5rem"
+                    gradient
+                />
+                <h2>{skill.title}</h2>
+                <p>{skill.description}</p>
+            </div>
+        ))
+    }
 </section>
 
 <style>
