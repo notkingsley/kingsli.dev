@@ -4,6 +4,7 @@ import ThemeToggle from "./ThemeToggle.astro";
 
 import "../styles/nav.css";
 
+import { NAV_TITLE } from "./config";
 import {
     is_nav_link_active,
     nav_menu_links,
@@ -21,7 +22,7 @@ import {
                 size="1.6em"
                 gradient
             />
-            kiŋsli
+            {NAV_TITLE}
         </a>
         <menu-button>
             <template>
@@ -109,11 +110,7 @@ import {
                     <div style="color: var(--accent-regular); opacity: 0.2;">
                         |
                     </div>
-                    <a
-                        href={resume_page}
-                        class="social"
-                        target="_blank"
-                    >
+                    <a href={resume_page} class="social" target="_blank">
                         <Icon icon={"resume"} />
                     </a>
                 </div>

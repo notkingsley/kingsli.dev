@@ -16,3 +16,5 @@ Can we schedule a meeting to discuss further?`;
 
 export const DEFAULT_PAGE_TITLE = "Kingsley";
 export const DEFAULT_PAGE_DESCRIPTION = "Kingsley's personal website";
+
+export const NAV_TITLE = "kiŋsli";
