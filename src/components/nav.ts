@@ -1,5 +1,4 @@
-import type { icon_paths } from "./icon_paths";
-
+import type { icons } from "./icons";
 import { links } from "./config";
 
 export const nav_menu_links: { label: string; href: string }[] = [
@@ -13,7 +12,7 @@ export const nav_menu_links: { label: string; href: string }[] = [
 export const nav_social_links: {
     label: string;
     href: string;
-    icon: keyof typeof icon_paths;
+    icon: keyof typeof icons;
 }[] = [
     { label: "GitHub", href: links.github, icon: "github-logo" },
     {
