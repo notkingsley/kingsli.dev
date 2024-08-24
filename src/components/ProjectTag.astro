@@ -1,7 +1,6 @@
 ---
 import HoverText from "./HoverText.astro";
 import Icon from "./Icon.astro";
-import { icon_to_hover_text } from "./HoverText.astro";
 import { icon_paths } from "./icon_paths";
 
 interface Props {
@@ -9,6 +8,18 @@ interface Props {
 }
 
 const { tag } = Astro.props;
+
+const icon_to_hover_text = {
+    distributed: "Distributed Systems",
+    "open-source": "Open Source",
+    "rocket-launch": "Astro",
+    featured: "Featured",
+    chatbot: "Chatbot",
+    python: "Python",
+    rust: "Rust",
+    live: "Live",
+    cpp: "C++",
+};
 
 const GRADIENT_TAGS = ["open-source", "distributed", "rocket-launch"];
 
