@@ -1,12 +1,14 @@
 import type { icons } from "./icons";
 import { links } from "./config";
 
+export const resume_page = "/resume";
+
 export const nav_menu_links: { label: string; href: string }[] = [
     { label: "Home", href: "/" },
     { label: "Projects", href: "/projects/" },
     { label: "About", href: "/about/" },
     { label: "Work", href: "/work" },
-    { label: "Resume", href: "/resume" },
+    { label: "Resume", href: resume_page },
 ];
 
 export const nav_social_links: {

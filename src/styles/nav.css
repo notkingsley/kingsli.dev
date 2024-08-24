@@ -121,6 +121,10 @@ nav {
     height: calc(var(--icon-size) + 2 * var(--icon-padding));
 }
 
+.nav-resume {
+    display: none;
+}
+
 @media (min-width: 50em) {
     nav {
         display: grid;
@@ -192,6 +196,10 @@ nav {
 
     .socials {
         display: none;
+    }
+
+    .nav-resume {
+        display: flex;
     }
 }
 
