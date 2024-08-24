@@ -13,3 +13,6 @@ export const CONTACT_EMAIL = links.email;
 export const CONTACT_TEMPLATE_SUBJECT = `Hey Kingsley, I'd like to work with you`;
 export const CONTACT_TEMPLATE_BODY = `Hi Kingsley, I came across your website and I think it would be great to work with you.
 Can we schedule a meeting to discuss further?`;
+
+export const DEFAULT_PAGE_TITLE = "Kingsley";
+export const DEFAULT_PAGE_DESCRIPTION = "Kingsley's personal website";

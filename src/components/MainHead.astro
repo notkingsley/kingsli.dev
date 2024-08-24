@@ -1,15 +1,15 @@
 ---
 import "../styles/global.css";
 
+import { DEFAULT_PAGE_DESCRIPTION, DEFAULT_PAGE_TITLE } from "./config";
+
 interface Props {
     title?: string | undefined;
     description?: string | undefined;
 }
 
-const {
-    title = "Kingsley",
-    description = "Kingsley Oyelabi's personal website.",
-} = Astro.props;
+const { title = DEFAULT_PAGE_TITLE, description = DEFAULT_PAGE_DESCRIPTION } =
+    Astro.props;
 ---
 
 <meta charset="UTF-8" />
