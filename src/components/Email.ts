@@ -1,4 +1,4 @@
-import { links } from "./links";
+import { links } from "./config";
 
 export const MAIL = links.email;
 

@@ -4,19 +4,18 @@ const currentYear = new Date().getFullYear();
 
 import "../styles/footer.css";
 
-import { links } from "./links";
+import { footer_copyright, links } from "./config";
 ---
 
 <footer>
     <div class="group">
-        <p>&copy; {currentYear} notkingsley</p>
+        <p>&copy; {currentYear} {footer_copyright}</p>
         <p>
             with Astro
             <Icon icon="rocket-launch" size="1.2em" />
         </p>
     </div>
     <p class="socials">
-        <a href={links.twitter}> Twitter</a>
         <a href={links.github}> GitHub</a>
         <a href={links.stack_overflow}> Stack Overflow </a>
     </p>

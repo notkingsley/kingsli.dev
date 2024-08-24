@@ -1,6 +1,6 @@
 import type { icon_paths } from "./icon_paths";
 
-import { links } from "./links";
+import { links } from "./config";
 
 export const nav_menu_links: { label: string; href: string }[] = [
     { label: "Home", href: "/" },

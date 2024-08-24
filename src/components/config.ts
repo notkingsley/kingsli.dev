@@ -1,3 +1,5 @@
+export const footer_copyright = "notkingsley";
+
 export const links = {
     twitter: "https://x.com/_notkingsley",
     github: "https://github.com/notkingsley",
