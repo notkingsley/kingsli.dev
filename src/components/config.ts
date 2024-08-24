@@ -1,4 +1,4 @@
-import { icons } from "./icons";
+import { icons } from "../lib/icons";
 
 export const footer_copyright = "notkingsley";
 
