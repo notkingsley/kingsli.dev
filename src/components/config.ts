@@ -8,7 +8,7 @@ export const links = {
     twitter: "https://x.com/_notkingsley",
     github: "https://github.com/notkingsley",
     linkedin: "https://www.linkedin.com/in/notkingsley",
-    stack_overflow: "https://stackoverflow.com/users/19434985/kingsley-oyelabi",
+    stack_overflow: "https://stackoverflow.com/users/19434985/",
     email: `mailto:${EMAIL}`,
     resume_file: "/assets/files/kingsley_24_06.pdf",
 };
@@ -46,3 +46,7 @@ export const skills: {
         varying sizes and complexities.`,
     },
 ];
+
+export const ABOUT_TITLE = "Kingsley | About";
+export const ABOUT_DESCRIPTION = "About Kingsley";
+export const ABOUT_TAGLINE = "Thanks for stopping by. Read below to learn a bit about me.";
