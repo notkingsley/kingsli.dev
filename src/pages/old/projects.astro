@@ -7,19 +7,22 @@ import Grid from "../../components/Grid.astro";
 import Hero from "../../components/Hero.astro";
 import Icon from "../../components/Icon.astro";
 import OldProject from "../../components/OldProject.astro";
+import { pages } from "../../components/config";
 
-import { type ProjectEntry } from "../../lib/project_entryntry";
+import { type ProjectEntry } from "../../lib/project_entry";
 
 import "../../styles/old.css";
 
 const old_projects: { data: ProjectEntry; id: string }[] = (
     await getCollection("old-projects")
 ).sort((a, b) => a.data.order - b.data.order);
+
+const oldProjectsPage = pages.oldProjects;
 ---
 
 <BaseLayout
-    title="Kingsley | Old Projects"
-    description="Some of my older projects..."
+    title={oldProjectsPage.title}
+    description={oldProjectsPage.description}
 >
     <div class="stack gap-20">
         <main class="wrapper stack gap-8">
@@ -27,8 +30,8 @@ const old_projects: { data: ProjectEntry; id: string }[] = (
                 ><Icon icon="arrow-left" /> Recent Projects
             </a>
             <Hero
-                title="Ancient Projects"
-                tagline="Some of my older projects..."
+                title={oldProjectsPage.heroTitle}
+                tagline={oldProjectsPage.tagline}
                 align="start"
             />
             <Grid variant="offset">

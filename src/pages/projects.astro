@@ -5,19 +5,20 @@ import ContactMe from "../components/ContactMe.astro";
 import PortfolioPreview from "../components/PortfolioPreview.astro";
 import Hero from "../components/Hero.astro";
 import Grid from "../components/Grid.astro";
+import Icon from "../components/Icon.astro";
+import { pages } from "../components/config";
 
 import { projects } from "../lib/projects";
+
+const projectsPage = pages.projects;
 ---
 
-<BaseLayout
-    title="Kingsley | Projects"
-    description="See Kingsley's most recent projects"
->
+<BaseLayout title={projectsPage.title} description={projectsPage.description}>
     <div class="stack gap-20">
         <main class="wrapper stack gap-8">
             <Hero
-                title="Recent Projects"
-                tagline="See my most recent projects below to get an idea of my past experience."
+                title={projectsPage.heroTitle}
+                tagline={projectsPage.tagline}
                 align="start"
             />
             <Grid variant="offset">
@@ -29,8 +30,11 @@ import { projects } from "../lib/projects";
                     ))
                 }
             </Grid>
-            <div>
-                <a href="/old/projects"> See my older projects </a>
+            <div style="text-align: right;">
+                <a href="/old/projects" style="text-decoration: none;">
+                    Older projects
+                    <Icon icon="arrow-right" />
+                </a>
             </div>
         </main>
         <ContactMe />

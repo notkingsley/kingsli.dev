@@ -5,25 +5,32 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 import ContactMe from "../components/ContactMe.astro";
 import Hero from "../components/Hero.astro";
+import Icon from "../components/Icon.astro";
 import WorkCard from "../components/WorkCard.astro";
 import { type WorkEntry } from "../lib/work_entry";
+import { pages } from "../components/config";
 
 const all_work: { data: WorkEntry; id: string }[] = (
     await getCollection("work")
 ).sort((a, b) => a.data.order - b.data.order);
+
+const workPage = pages.work;
 ---
 
-<BaseLayout title="Kingsley | Work" description="Kingsley's recent employment">
+<BaseLayout title={workPage.title} description={workPage.description}>
     <div class="stack gap-20">
         <main class="wrapper stack gap-15">
             <Hero
-                title="Work"
-                tagline="A selection of my recent work experiences."
+                title={workPage.heroTitle}
+                tagline={workPage.tagline}
                 align="start"
             />
             {all_work.map((w) => <WorkCard work={w.data} animate />)}
-            <div>
-                <a href="/old/work"> See my older work experiences </a>
+            <div style="text-align: right;">
+                <a href="/old/work" style="text-decoration: none;">
+                    See my older work experiences
+                    <Icon icon="arrow-right" />
+                </a>
             </div>
         </main>
         <ContactMe />

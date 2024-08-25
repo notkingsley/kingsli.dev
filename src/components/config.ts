@@ -47,6 +47,73 @@ export const skills: {
     },
 ];
 
-export const ABOUT_TITLE = "Kingsley | About";
-export const ABOUT_DESCRIPTION = "About Kingsley";
-export const ABOUT_TAGLINE = "Thanks for stopping by. Read below to learn a bit about me.";
+export const homePageRoles: {
+    icon: keyof typeof icons;
+    label: string;
+}[] = [
+    {
+        icon: "code",
+        label: "Software Developer",
+    },
+    {
+        icon: "thinking",
+        label: "Critical Thinker",
+    },
+    {
+        icon: "machine-learning",
+        label: "AI Engineer",
+    },
+];
+
+const homePage = {
+    title: "Kingsley | Home",
+    description: "Kingsley's personal website",
+    tagline:
+        "I am a Software Developer with strong foundations in\
+        Computer Science principles and a proven track record of delivering high-quality software.",
+    heroTitle: "Hello, my name is Kingsley Oyelabi",
+};
+
+const aboutPage = {
+    title: "Kingsley | About",
+    description: "About Kingsley",
+    tagline: "Thanks for stopping by. Read below to learn a bit about me.",
+    heroTitle: "About",
+};
+
+const projectsPage = {
+    title: "Kingsley | Projects",
+    description: "Kingsley's most recent projects",
+    tagline: "See my most recent projects below.",
+    heroTitle: "Recent Projects",
+};
+
+const workPage = {
+    title: "Kingsley | Work",
+    description: "Kingsley's recent employment",
+    tagline: "A selection of my recent work experiences.",
+    heroTitle: "Work",
+};
+
+const oldWorkPage = {
+    title: "Kingsley | Old Work",
+    description: "Kingsley's employment history",
+    tagline: "Some of the things I've done in the past..",
+    heroTitle: "Old Work",
+};
+
+const oldProjectsPage = {
+    title: "Kingsley | Old Projects",
+    description: "Some of my older projects...",
+    tagline: "Some of my older projects...",
+    heroTitle: "Ancient Projects",
+};
+
+export const pages = {
+    home: homePage,
+    about: aboutPage,
+    projects: projectsPage,
+    work: workPage,
+    oldWork: oldWorkPage,
+    oldProjects: oldProjectsPage,
+};

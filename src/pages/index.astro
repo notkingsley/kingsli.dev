@@ -10,54 +10,45 @@ import PortfolioPreview from "../components/PortfolioPreview.astro";
 
 import ContactMe from "../components/ContactMe.astro";
 import Skills from "../components/Skills.astro";
+import { pages, homePageRoles } from "../components/config";
 
 import { projects } from "../lib/projects";
 
-const HERO_TAGLINE =
-    "I am a Software Developer with strong foundations in\
- Computer Science principles and a proven track record of delivering high-quality software.";
+const homePage = pages.home;
 ---
 
-<BaseLayout>
+<BaseLayout title={homePage.title} description={homePage.description}>
     <div class="stack gap-20 lg:gap-48">
         <div class="wrapper stack gap-8 lg:gap-20">
             <header class="hero">
                 <Hero
-                    title="Hello, my name is Kingsley Oyelabi"
-                    tagline={HERO_TAGLINE}
+                    title={homePage.heroTitle}
+                    tagline={homePage.tagline}
                     align="start"
                 >
                     <div class="roles">
-                        <Pill>
-                            <Icon icon="code" size="1.33em" /> Developer
-                        </Pill>
-                        <Pill>
-                            <Icon icon="thinking" size="1.33em" /> Critical Thinker
-                        </Pill>
-                        <Pill>
-                            <Icon icon="machine-learning" size="1.33em" /> AI Engineer
-                        </Pill>
+                        {
+                            homePageRoles.map((role) => (
+                                <Pill>
+                                    <Icon icon={role.icon} size="1.33em" />{" "}
+                                    {role.label}
+                                </Pill>
+                            ))
+                        }
                     </div>
                 </Hero>
-
                 <img
-                    alt="Kingsley Oyelabi's portrait photo"
+                    alt="Portrait photo"
                     width="480"
                     height="620"
                     src="/assets/portrait.jpg"
-                    aria-todo="Update image"
-                    aria-todo="Provide a better alt text for the image."
                 />
             </header>
-
             <Skills />
         </div>
 
         <main class="wrapper stack gap-20 lg:gap-48">
-            <section
-                class="section with-background with-cta"
-                aria-todo="Update projects"
-            >
+            <section class="section with-background with-cta">
                 <header class="section-header stack gap-2 lg:gap-4">
                     <h3>Projects at a glance</h3>
                     <p>Here are some of my recent projects.</p>
