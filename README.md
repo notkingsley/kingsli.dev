@@ -1,6 +1,6 @@
-# My Portfolio [Website](https://kingsli.dev)
+# My Portfolio Website
 
-![image](https://github.com/notkingsley/kingsli.dev/assets/103395094/38e7cd21-0122-45e3-ad0f-4fa6f7f1c54e)
+![image](https://github.com/user-attachments/assets/fea48206-87f1-4a32-aa82-98a379bcae2e)
 
 ## How to use
 
@@ -16,5 +16,14 @@ First, you'll need to install [Node.js](https://nodejs.org) and [npm](https://np
 | `npm run preview`         | Preview the build locally     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+
+
+### Customization
+---
+You will need to rename the [`template.config.json`](./src/template.config.json) file to `config.json` and populate it with your own information.
+
+You will also need to populate the [`src/content`](./src/content/) directory with your own content for the /about, /projects, /work, /old/projects and /old/work pages. The schemas are defined in [config.ts](./src/content/config.ts).
+
 
 **Disfruta!** 🚀
