@@ -1,4 +1,4 @@
-import { icons } from "../lib/icons";
+import type { IconType } from "../lib/icons";
 
 export const footer_copyright = "notkingsley";
 
@@ -23,7 +23,7 @@ export const DEFAULT_PAGE_DESCRIPTION = "Kingsley's personal website";
 export const NAV_TITLE = "kiŋsli";
 
 export const skills: {
-    icon: keyof typeof icons;
+    icon: IconType;
     title: string;
     description: string;
 }[] = [
@@ -48,7 +48,7 @@ export const skills: {
 ];
 
 export const homePageRoles: {
-    icon: keyof typeof icons;
+    icon: IconType;
     label: string;
 }[] = [
     {

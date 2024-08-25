@@ -1,9 +1,10 @@
 ---
 import type { HTMLAttributes } from "astro/types";
+import type { IconType } from "../lib/icons";
 import { icons } from "../lib/icons";
 
 interface Props {
-    icon: keyof typeof icons;
+    icon: IconType;
     color?: string;
     gradient?: boolean;
     size?: string;

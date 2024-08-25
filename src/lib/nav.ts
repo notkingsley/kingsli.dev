@@ -1,4 +1,4 @@
-import type { icons } from "./icons";
+import type { IconType } from "./icons";
 import { links } from "../components/config";
 
 export const resume_page = "/resume";
@@ -14,7 +14,7 @@ export const nav_menu_links: { label: string; href: string }[] = [
 export const nav_social_links: {
     label: string;
     href: string;
-    icon: keyof typeof icons;
+    icon: IconType;
 }[] = [
     { label: "GitHub", href: links.github, icon: "github-logo" },
     {

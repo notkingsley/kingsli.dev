@@ -1,9 +1,9 @@
-import { icons } from "./icons";
+import type { IconType } from "./icons";
 
 export interface ProjectEntry {
     title: string;
     description: string;
-    tags: Array<keyof typeof icons>;
+    tags: Array<IconType>;
     img: string;
     img_alt: string;
     source: string | undefined;

@@ -1,10 +1,10 @@
 ---
 import HoverText from "./HoverText.astro";
 import Icon from "./Icon.astro";
-import { icons } from "../lib/icons"
+import type { IconType } from "../lib/icons"
 
 interface Props {
-    tag: keyof typeof icons;
+    tag: IconType;
 }
 
 const { tag } = Astro.props;
