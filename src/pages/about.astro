@@ -5,9 +5,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 import ContactMe from "../components/ContactMe.astro";
 import Hero from "../components/Hero.astro";
-import { pages } from "../components/config";
+import { pages } from "../config";
 
-const aboutPage = pages.about;
+const about_page = pages.about;
 
 const about = await Promise.all(
     (await getCollection("about")).map(async (entry) => {
@@ -16,10 +16,10 @@ const about = await Promise.all(
 );
 ---
 
-<BaseLayout title={aboutPage.title} description={aboutPage.description}>
+<BaseLayout title={about_page.title} description={about_page.description}>
     <div class="stack gap-20">
         <main class="wrapper about">
-            <Hero title={aboutPage.heroTitle} tagline={aboutPage.tagline}>
+            <Hero title={about_page.hero_title} tagline={about_page.tagline}>
                 <img
                     width="1553"
                     height="873"

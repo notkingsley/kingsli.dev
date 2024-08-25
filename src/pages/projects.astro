@@ -6,19 +6,19 @@ import PortfolioPreview from "../components/PortfolioPreview.astro";
 import Hero from "../components/Hero.astro";
 import Grid from "../components/Grid.astro";
 import Icon from "../components/Icon.astro";
-import { pages } from "../components/config";
+import { pages } from "../config";
 
 import { projects } from "../lib/projects";
 
-const projectsPage = pages.projects;
+const projects_page = pages.projects;
 ---
 
-<BaseLayout title={projectsPage.title} description={projectsPage.description}>
+<BaseLayout title={projects_page.title} description={projects_page.description}>
     <div class="stack gap-20">
         <main class="wrapper stack gap-8">
             <Hero
-                title={projectsPage.heroTitle}
-                tagline={projectsPage.tagline}
+                title={projects_page.hero_title}
+                tagline={projects_page.tagline}
                 align="start"
             />
             <Grid variant="offset">

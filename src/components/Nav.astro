@@ -4,7 +4,7 @@ import ThemeToggle from "./ThemeToggle.astro";
 
 import "../styles/nav.css";
 
-import { NAV_TITLE } from "./config";
+import { nav_title } from "../config";
 import {
     is_nav_link_active,
     nav_menu_links,
@@ -22,7 +22,7 @@ import {
                 size="1.6em"
                 gradient
             />
-            {NAV_TITLE}
+            {nav_title}
         </a>
         <menu-button>
             <template>

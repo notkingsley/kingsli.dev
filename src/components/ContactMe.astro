@@ -2,15 +2,15 @@
 import CallToAction from "./CallToAction.astro";
 import Icon from "./Icon.astro";
 import {
-    CONTACT_TEMPLATE_SUBJECT,
-    CONTACT_TEMPLATE_BODY,
-    EMAIL,
+    contact_template_subject,
+    contact_template_body,
+    email,
     links,
-} from "./config";
+} from "../config";
 
 import "../styles/contact.css";
 
-const GMAIL_LINK = `https://mail.google.com/mail/?view=cm&to=${EMAIL}&su=${CONTACT_TEMPLATE_SUBJECT}&body=${CONTACT_TEMPLATE_BODY}`;
+const GMAIL_LINK = `https://mail.google.com/mail/?view=cm&to=${email}&su=${contact_template_subject}&body=${contact_template_body}`;
 ---
 
 <aside class="contact">

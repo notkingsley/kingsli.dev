@@ -1,14 +1,14 @@
 ---
 import "../styles/global.css";
 
-import { DEFAULT_PAGE_DESCRIPTION, DEFAULT_PAGE_TITLE } from "./config";
+import { default_page_description, default_page_title } from "../config";
 
 interface Props {
     title?: string | undefined;
     description?: string | undefined;
 }
 
-const { title = DEFAULT_PAGE_TITLE, description = DEFAULT_PAGE_DESCRIPTION } =
+const { title = default_page_title, description = default_page_description } =
     Astro.props;
 ---
 

@@ -2,7 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Icon from "../components/Icon.astro";
 
-import { links } from "../components/config";
+import { links } from "../config";
 ---
 
 <BaseLayout title="Resume" description="My resume">
@@ -97,7 +97,7 @@ import { links } from "../components/config";
 </style>
 
 <script>
-    import { links } from "../components/config";
+    import { links } from "../config";
 
     function show_pdf_header() {
         let pdf_header = document.getElementById("pdf-header");

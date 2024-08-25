@@ -1,5 +1,5 @@
 import type { IconType } from "./icons";
-import { links } from "../components/config";
+import { links } from "../config";
 
 export const resume_page = "/resume";
 

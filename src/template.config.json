@@ -1,0 +1,86 @@
+{
+    "email": "username@example.com",
+    "links": {
+        "twitter": "https://x.com/username",
+        "github": "https://github.com/username",
+        "linkedin": "https://www.linkedin.com/in/username",
+        "stack_overflow": "https://stackoverflow.com/users/<user-id>/",
+        "email": "mailto:username@example.com",
+        "resume_file": "/assets/files/resume.pdf"
+    },
+    "default_page_title": "User",
+    "default_page_description": "User's personal website",
+    "nav_title": "user",
+    "contact_template_subject": "Hey User, I'd like to work with you",
+    "contact_template_body": "Hi User, I came across your website and I think it would be great to work with you. Can we schedule a meeting to discuss further?",
+    "skills": [
+        {
+            "icon": "stack-plus",
+            "title": "Title 1",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        },
+        {
+            "icon": "strategy",
+            "title": "Title 2",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        },
+        {
+            "icon": "trophy",
+            "title": "Title 3",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        }
+    ],
+    "home_page_roles": [
+        {
+            "icon": "code",
+            "label": "Role 1"
+        },
+        {
+            "icon": "thinking",
+            "label": "Role 2"
+        },
+        {
+            "icon": "machine-learning",
+            "label": "Role 3"
+        }
+    ],
+    "pages": {
+        "home": {
+            "title": "User | Home",
+            "description": "User's personal website",
+            "tagline": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "hero_title": "Hello, my name is UserName"
+        },
+        "about": {
+            "title": "User | About",
+            "description": "About User",
+            "tagline": "Thanks for stopping by. Read below to learn a bit about me.",
+            "hero_title": "About"
+        },
+        "projects": {
+            "title": "User | Projects",
+            "description": "User's most recent projects",
+            "tagline": "See my most recent projects below.",
+            "hero_title": "Recent Projects"
+        },
+        "work": {
+            "title": "User | Work",
+            "description": "User's recent employment",
+            "tagline": "A selection of my recent work experiences.",
+            "hero_title": "Work"
+        },
+        "old_work": {
+            "title": "User | Old Work",
+            "description": "User's employment history",
+            "tagline": "Some of the things I've done in the past..",
+            "hero_title": "Old Work"
+        },
+        "old_projects": {
+            "title": "User | Old Projects",
+            "description": "Some of my older projects...",
+            "tagline": "Some of my older projects...",
+            "hero_title": "Ancient Projects"
+        }
+    },
+    "footer_copyright": "username"
+}

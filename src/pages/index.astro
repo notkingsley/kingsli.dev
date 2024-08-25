@@ -10,25 +10,25 @@ import PortfolioPreview from "../components/PortfolioPreview.astro";
 
 import ContactMe from "../components/ContactMe.astro";
 import Skills from "../components/Skills.astro";
-import { pages, homePageRoles } from "../components/config";
+import { pages, home_page_roles } from "../config";
 
 import { projects } from "../lib/projects";
 
-const homePage = pages.home;
+const home_page = pages.home;
 ---
 
-<BaseLayout title={homePage.title} description={homePage.description}>
+<BaseLayout title={home_page.title} description={home_page.description}>
     <div class="stack gap-20 lg:gap-48">
         <div class="wrapper stack gap-8 lg:gap-20">
             <header class="hero">
                 <Hero
-                    title={homePage.heroTitle}
-                    tagline={homePage.tagline}
+                    title={home_page.hero_title}
+                    tagline={home_page.tagline}
                     align="start"
                 >
                     <div class="roles">
                         {
-                            homePageRoles.map((role) => (
+                            home_page_roles.map((role) => (
                                 <Pill>
                                     <Icon icon={role.icon} size="1.33em" />{" "}
                                     {role.label}
