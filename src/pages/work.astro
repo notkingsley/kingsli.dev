@@ -25,7 +25,7 @@ const work_page = pages.work;
                 tagline={work_page.tagline}
                 align="start"
             />
-            {all_work.map((w) => <WorkCard work={w.data} animate />)}
+            {all_work.map((w, index) => <WorkCard work={w.data} animate index={index} />)}
             <div style="text-align: right;">
                 <a href="/old/work" style="text-decoration: none;">
                     See my older work experiences

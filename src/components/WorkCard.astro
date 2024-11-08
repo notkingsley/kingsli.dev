@@ -7,17 +7,22 @@ interface Props {
     work: WorkEntry;
     animate?: boolean;
     color?: boolean;
+    index?: number;
 }
 
-const { work, animate = false, color = true } = Astro.props;
+const { work, animate = false, color = true, index = 0 } = Astro.props;
 const classes = [
     "work-section",
     animate ? "alive" : "",
     color ? "colored" : "",
 ].join(" ");
+
+const animation_delay = `--animation-delay: ${-index * 3}s;`;
+const line_animation_delay = `--line-animation-delay: ${-index * 1.5}s;`;
+const style = `${animation_delay} ${line_animation_delay}`;
 ---
 
-<div class={classes}>
+<div class={classes} data-index={index} style={style}>
     <div class="work-section-inner">
         <div class="work-header">
             <a href={work.link} target="_blank" class="work-link">

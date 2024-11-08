@@ -11,6 +11,7 @@
 .work-section.alive {
     background-size: 200% 200%;
     animation: gradientAnimation 15s ease infinite;
+    animation-delay: var(--animation-delay);
 }
 
 .work-section-inner {
@@ -70,6 +71,7 @@
 .work-section.alive .divider::before {
     background-size: 200% 200%;
     animation: gradientAnimation 3s ease infinite;
+    animation-delay: var(--line-animation-delay);
 }
 
 .work-content {
