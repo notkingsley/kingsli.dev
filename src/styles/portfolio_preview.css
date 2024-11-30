@@ -11,7 +11,6 @@
     font-family: var(--font-brand);
     font-size: var(--text-lg);
     font-weight: 500;
-    transition: box-shadow var(--theme-transition);
 }
 
 .card.portfolio:hover {

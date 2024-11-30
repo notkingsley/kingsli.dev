@@ -13,7 +13,7 @@ interface Props {
 const { data, id } = Astro.props.project;
 ---
 
-<a class="card portfolio" href={`/project/${id}`}>
+<a class="card portfolio enlarge-on-hover" href={`/project/${id}`}>
     <span class="title portfolio">{data.title}</span>
     <div class="description portfolio">
         <HoverText text={data.description} below>
