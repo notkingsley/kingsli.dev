@@ -261,3 +261,21 @@ h5 {
 		gap: 12rem;
 	}
 }
+
+.enlarge-on-hover {
+	transition: transform 0.6s, box-shadow 0.6s;
+}
+
+.enlarge-on-hover:hover {
+	transform: scale(1.05);
+	box-shadow: var(--shadow-md);
+}
+
+.shrink-on-hover {
+	transition: transform 0.6s, box-shadow 0.6s;
+}
+
+.shrink-on-hover:hover {
+	transform: scale(0.95);
+	box-shadow: var(--shadow-md);
+}
