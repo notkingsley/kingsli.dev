@@ -5,7 +5,6 @@ interface Props {
 }
 
 const { text, below = false } = Astro.props;
-
 ---
 
 <div class="icon-container">
@@ -50,20 +49,20 @@ const { text, below = false } = Astro.props;
     .tooltip::after {
         content: "";
         position: absolute;
-        top: 100%;
         left: 50%;
         margin-left: -5px;
         border-width: 5px;
         border-style: solid;
     }
-    
+
     .tooltip.above::after {
+        top: 100%;
         border-color: black transparent transparent transparent;
     }
-    
+
     .tooltip.below::after {
-        bottom: 50%;
-        border-color: rgba(0, 0, 0, 0.5) transparent transparent transparent;
+        bottom: 100%;
+        border-color: transparent transparent black transparent;
     }
 
     .icon-container:hover .tooltip {
