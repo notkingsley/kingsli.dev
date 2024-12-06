@@ -43,6 +43,7 @@ BACKUP_REMOTE_DIR="$REMOTE_DIR.old"
 
 
 # build the project
+echo -e "${cyan}Building project${_r}"
 npm run astro build
 if [ $? -ne 0 ]; then
     echo -e "${red}Build failed${_r}"
@@ -60,6 +61,21 @@ if [ $? -ne 0 ]; then
     exit 1
 else
     echo -e "${green}FTP server mounted${_r}"
+fi
+
+#remove the old backup folder if it exists
+if [ -d "$BACKUP_REMOTE_DIR" ]; then
+    echo -e "${cyan}Removing old backup folder: $BACKUP_REMOTE_DIR${_r}"
+    rm -rf $BACKUP_REMOTE_DIR
+    if [ $? -ne 0 ]; then
+        echo -e "${red}Could not remove old backup folder: $BACKUP_REMOTE_DIR. Unmounting FTP server${_r}"
+        fusermount -u $FTP_DIR
+        exit 1
+    else
+        echo -e "${green}Old backup folder removed${_r}"
+    fi
+else
+    echo -e "${purple}Old backup folder does not exist. Continuing${_r}"
 fi
 
 # rename the old build folder
