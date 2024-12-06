@@ -11,9 +11,7 @@ a.generic-link {
     border-radius: 999rem;
     overflow: hidden;
     background-color: var(--accent-regular);
-    box-shadow: var(--shadow-md);
     white-space: nowrap;
-
     border: 1px solid var(--accent-regular);
     font-size: var(--text-md);
 }
@@ -23,7 +21,7 @@ a.generic-link::after {
     position: absolute;
     inset: 0;
     pointer-events: none;
-    transition: background-color var(--theme-transition);
+    transition: background-color 0.9s;
     mix-blend-mode: overlay;
 }
 
