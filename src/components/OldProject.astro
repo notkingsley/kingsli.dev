@@ -15,7 +15,7 @@ const link = data.source || data.site || `#${id}`;
 const target = data.source || data.site ? "_blank" : "_self";
 ---
 
-<a class="card portfolio" href={link} target={target}>
+<a class="card portfolio enlarge-on-hover" href={link} target={target}>
     <span class="title portfolio">{data.title}</span>
     <div class="description portfolio">
         <HoverText text={data.description} below>
